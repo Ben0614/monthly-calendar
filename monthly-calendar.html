@@ -1,0 +1,69 @@
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8' />
+    <!-- 鍵入Full Calendar -->
+    <link href='./lib/main.css' rel='stylesheet' />
+    <script src='./lib/main.js'></script>
+
+    <!-- 轉換成中文 -->
+    <script src="./lib/locales-all.js"></script>
+
+    <!-- 鍵入style.css -->
+    <link rel="stylesheet" href="./style.css">
+    <title>monthly-calendar</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                // 轉成繁體中文
+                locale: 'zh-tw',
+                navLinks: true,
+                // 頭部
+                headerToolbar: {
+                    // 左邊添加上下和今天按鈕
+                    left: 'prev,next today',
+                    // 中間放title
+                    center: 'title',
+                    // 右邊放月週天
+                    right: 'dayGridMonth,timeGridWeek,timeGridDay'
+                },
+                // 正確是要從資料庫添加
+                // 添加行程
+                events: [
+                    // 格式一:只寫日期
+                    {
+                        title: '練習js',
+                        start: '2021-07-23',
+                        end: '2021-07-25'
+                    },
+                    // 格式二:寫入時間
+                    {
+                        title: '練習php',
+                        start: '2021-07-28T14:00:00',
+                        end: '2021-07-28T16:00:00'
+                    },
+                    // 格式三:一整天
+                    {
+                        title: '練習node.js',
+                        start: '2021-07-30',
+                        allDay: false
+                    }
+                ]
+
+            });
+            calendar.render();
+        });
+
+    </script>
+</head>
+
+<body>
+    <!-- 新增container包住calendar -->
+    <div class="container">
+        <div id='calendar'></div>
+    </div>
+</body>
+
+</html>
