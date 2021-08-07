@@ -29,16 +29,17 @@ body{
 }
 
 @media(max-width:760px){
+/* 調整月曆尺寸和位置 */
 .container{
     width: 400px;
     height: 450px;
 }
-
+/* title字體大小粗細 */
 .fc .fc-toolbar-title{
     font-size: 26px;
     font-weight: 700;
 }
-
+/* 星期字體大小粗細 */
 .fc-col-header-cell-cushion {
     font-size: 16px;
     font-weight: 700;
